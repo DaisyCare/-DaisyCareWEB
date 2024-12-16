@@ -104,7 +104,7 @@ scroll-behavior: smooth;
 }
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
 .nav-buttons {
 display: none;
 position: fixed;
@@ -186,7 +186,7 @@ max-height: 210px;
 
 
 /* Mobile View (one item per row, centered) */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
 .container {
 grid-template-columns: 1fr; /* One column layout */
 justify-items: center; /* Center each box horizontally */
@@ -278,7 +278,7 @@ font-size: 13px;
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
 .footer-container {
 flex-direction: column; /* Stack sections vertically */
 align-items: center; /* Center-align sections */
