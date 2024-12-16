@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Daisy Care - Home</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="stylesheet" href="mainstyle.css">
+    </head>
+    <body>
+
+    <!-- Toolbar -->
+
+    <div class="toolbar">
+        <i class="fas fa-bars mobile-menu-icon" onclick="toggleMobileMenu()"></i>
+        
+        <div class="nav-buttons">
+            <i class="fas fa-times mobile-close-icon" onclick="toggleMobileMenu()"></i>
+            
+            <a href="main.html">Home</a>
+
+            <div class="dropdown">
+                <a href="#">Category ▼</a>
+                <div class="dropdown-content">
+                    <div class="sub-dropdown">
+                        <a onclick="toggleSubmenu(event, 'skin-submenu')">Skin</a>
+                        <div id="skin-submenu" class="sub-dropdown-content">
+                            <a href="#">Cleansers</a>
+                            <a href="#">Moisturizers</a>
+                            <a href="#">Serums</a>
+                        </div>
+                    </div>
+                    <div class="sub-dropdown">
+                        <a onclick="toggleSubmenu(event, 'hair-submenu')">Hair</a>
+                        <div id="hair-submenu" class="sub-dropdown-content">
+                            <a href="#">Shampoo</a>
+                            <a href="#">Conditioner</a>
+                            <a href="#">Hair Masks</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#about-section">About</a>
+        </div>
+
+        <div class="logo">Daisy Care</div>
+    </div>
+
+    <div class="logoimg"><img src="https://i.ibb.co/q5C8BVC/2f52538baa0a0585a20fdf755724c237-removebg-preview-2.png" alt="2f52538baa0a0585a20fdf755724c237-removebg-preview-2"></div>
+
+
+    <!-- Product Boxes -->
+    <div class="container">
+        <div class="box box1">
+            <a href="Avene.html" style="border: 0; background: none;">
+                <img src="https://i.ibb.co/ZHn9rCF/Avene-logo-removebg-preview.png" alt="Avene-logo-removebg-preview">
+            </a>
+        </div>
+        <div class="box box2">
+            <a href="the-purest-solutions.html" style="border: 0; background: none;">
+                <img src="https://i.ibb.co/mz5TMPN/the-purest-solutions.png" alt="the-purest-solutions">
+            </a>
+        </div>
+        <div class="box box3">
+            <a href="Arifoglu.html" style="border: 0; background: none;">
+                <img src="https://i.ibb.co/n8NqjDV/arifoglu.png" alt="arifoglu">
+            </a>
+        </div>
+        <div class="box box4">
+            <a href="Bioderma.html" style="border: 0; background: none;">
+                <img src="https://i.ibb.co/YbjJgHW/Bioderma-Logo-removebg-preview.png" alt="Bioderma-Logo-removebg-preview">
+            </a>
+        </div>
+    </div>
+    
+
+<footer id="about-section" class="site-footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>About Us</h3>
+            <p>hey everyone!
+                This page is dedicated to skin care products.
+                All products are from Turkey and France as well.
+                Delivery is available to all governorates of Egypt. 
+                Delivery within 5-10 days from the date of order request 🌷.
+                </p>
+        </div>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="main.html">Home</a></li>
+                <li><a href="#">Category</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <div class="social-links">
+                <a href="https://www.facebook.com/profile.php?id=61569551098029&mibextid=ZbWKwL" id="facebook-link">Facebook</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+
+
+    <!-- Script for the dropdown menu -->
+
+    <script>
+        function toggleMobileMenu() {
+    const navButtons = document.querySelector('.nav-buttons');
+    navButtons.classList.toggle('active');
+}
+
+function toggleSubmenu(event, submenuId) {
+    event.preventDefault();
+    const submenu = document.getElementById(submenuId);
+    
+    // Close all other submenus
+    const allSubmenus = document.querySelectorAll('.sub-dropdown-content');
+    allSubmenus.forEach(sub => {
+        if (sub !== submenu) {
+            sub.style.display = 'none';
+        }
+    });
+    
+    // Toggle the clicked submenu
+    submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+}
+
+// Add event listener to close all submenus when the mouse leaves the category
+const dropdown = document.querySelector('.dropdown');
+dropdown.addEventListener('mouseleave', () => {
+    const allSubmenus = document.querySelectorAll('.sub-dropdown-content');
+    allSubmenus.forEach(sub => {
+        sub.style.display = 'none';
+    });
+});
+
+// Attach the click event to "About" links
+document.querySelectorAll('a[href="#about-section"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault(); // Prevent default link behavior
+            document.querySelector('#about-section').scrollIntoView({
+                behavior: 'smooth' // Smooth scrolling
+            });
+        });
+    });
+
+    document.getElementById('facebook-link').addEventListener('click', function (e) {
+        e.preventDefault(); // Prevent the default link action
+        
+        // Open the link in a new tab
+        const newTab = window.open('', '_blank');
+        
+        // Apply a black background and white text to the new tab
+        newTab.document.body.style.backgroundColor = 'black';
+        newTab.document.body.style.color = 'white';
+        
+        // Now set the location of the new tab to the actual URL
+        newTab.location.href = this.href;
+    });
+
+    </script>
+
+</body>
+</html>

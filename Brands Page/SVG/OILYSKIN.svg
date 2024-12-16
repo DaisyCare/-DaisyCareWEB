@@ -1,0 +1,32 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+    <defs>
+        <style>
+            .cls-1 {
+                font-size: 6px;
+                font-family: ArialMT, Arial;
+                font-weight: 400; /* Normal font weight (no bold) */
+            }
+            .cls-2, .cls-3 {
+                fill: none;
+                stroke: #000;
+            }
+            .cls-2 {
+                stroke-miterlimit: 10;
+                stroke-width: 1.5; /* Slightly thicker stroke for the outer circle and smaller circles */
+            }
+            .cls-3 {
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                stroke-width: 1.2; /* Slightly thicker stroke for the lines */
+            }
+        </style>
+    </defs>
+    <text class="cls-1" transform="translate(18.49 38.99)">OILY<tspan x="-0.39" y="6">SKIN</tspan></text>
+    <circle class="cls-2" cx="25" cy="20.02" r="12.5"/>
+    <line class="cls-3" x1="14.58" y1="20.02" x2="35.42" y2="20.02"/>
+    <circle class="cls-3" cx="25" cy="23.49" r="0.5"/>
+    <circle class="cls-3" cx="32" cy="23.49" r="0.5"/>
+    <circle class="cls-3" cx="18" cy="23.49" r="0.5"/>
+    <circle class="cls-2" cx="21.82" cy="27.31" r="0.5"/>
+    <circle class="cls-2" cx="28.88" cy="27.31" r="0.5"/>
+</svg>

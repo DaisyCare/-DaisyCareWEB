@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Daisy Care - Avene (miceller water)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="Productstyle.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+
+    <!-- Toolbar -->
+    
+    <div class="toolbar">
+        <i class="fas fa-bars mobile-menu-icon" onclick="toggleMobileMenu()"></i>
+        
+        <div class="nav-buttons">
+            <i class="fas fa-times mobile-close-icon" onclick="toggleMobileMenu()"></i>
+            
+            <a href="../main.html">Home</a>
+    
+            <div class="dropdown">
+                <a href="#">Category ▼</a>
+                <div class="dropdown-content">
+                    <div class="sub-dropdown">
+                        <a onclick="toggleSubmenu(event, 'skin-submenu')">Skin</a>
+                        <div id="skin-submenu" class="sub-dropdown-content">
+                            <a href="#">Cleansers</a>
+                            <a href="#">Moisturizers</a>
+                            <a href="#">Serums</a>
+                        </div>
+                    </div>
+                    <div class="sub-dropdown">
+                        <a onclick="toggleSubmenu(event, 'hair-submenu')">Hair</a>
+                        <div id="hair-submenu" class="sub-dropdown-content">
+                            <a href="#">Shampoo</a>
+                            <a href="#">Conditioner</a>
+                            <a href="#">Hair Masks</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <a href="#about-section">About</a>
+        </div>
+    
+        <div class="logo">Daisy Care</div>
+    </div>
+    
+    <a href="../Avene.html">
+        <div class="logoimg">
+            <img src="https://i.ibb.co/ZHn9rCF/Avene-logo-removebg-preview.png" alt="Avene-logo-removebg-preview">
+        </div>
+    </a>
+    
+    <div class="container">
+        <div class="box box1">
+            <a id="preview-link">
+                <img id="preview-image" src="#" alt="Avene-logo-removebg-preview">
+            </a>
+    
+            <div class="product-name">Micellar Water</div>
+    
+            <!-- New container for radio buttons -->
+            <div class="radio-container">
+                <div class="product-skin-type">
+                    <div class="skin-type">
+                        <!-- Radio buttons for skin types -->
+                        <div class="dry-skin">
+                            <input type="radio" id="dry-skin" name="skin-type" class="skin-radio" onchange="updatePreviewImage('dry-skin')" checked style="display: none;">
+                            <label for="dry-skin">
+                                <img src="SVG/DRYSKIN.svg" alt="Dry Skin">
+                            </label>
+                        </div>
+    
+                        <div class="normall-skin">
+                            <input type="radio" id="normall-skin" name="skin-type" class="skin-radio" onchange="updatePreviewImage('normall-skin')" style="display: none;">
+                            <label for="normall-skin">
+                                <img src="SVG/NORMALSKIN.svg" alt="Normal Skin"> <!-- style="width: 80px; height: 80px; cursor: pointer;"-->
+                            </label>
+                        </div>
+    
+                        <div class="oily-skin">
+                            <input type="radio" id="oily-skin" name="skin-type" class="skin-radio" onchange="updatePreviewImage('oily-skin')" style="display: none;">
+                            <label for="oily-skin">
+                                <img src="SVG/OILYSKIN.svg" alt="Oily Skin">
+                            </label>
+                        </div>
+    
+                        <div class="sensitive-skin">
+                            <input type="radio" id="sensitive-skin" name="skin-type" class="skin-radio" onchange="updatePreviewImage('sensitive-skin')" style="display: none;">
+                            <label for="sensitive-skin">
+                                <img src="SVG/SENSITIVESKIN.svg" alt="Sensitive Skin">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contactUS">
+                <button onclick="openWhatsAppChat()">
+                    <a>Order Now</a>
+                    <img src="SVG/whatsapp.svg" alt="Contact Us">
+                </button>
+            </div>
+            
+            <!-- End of new container -->
+        </div>
+    </div>
+    
+    
+    </div>
+    
+
+
+    <div class="product-dis-head">Description</div>
+    <div class="product-dis"><p>hey everyone!
+        This page is dedicated to skin care products.
+        All products are from Turkey and France as well.
+        Delivery is available to all governorates of Egypt. 
+        Delivery within 5-10 days from the date of order request 🌷.
+        </p></div>
+    <div class="price"></div>
+    <div class="orderNow"></div>
+</div>
+
+
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>hey everyone!
+                    This page is dedicated to skin care products.
+                    All products are from Turkey and France as well.
+                    Delivery is available to all governorates of Egypt. 
+                    Delivery within 5-10 days from the date of order request 🌷.
+                    </p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="main.html">Home</a></li>
+                    <li><a href="#">Category</a></li>
+                    <li><a href="#Page-Top">Page Top</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/profile.php?id=61569551098029&mibextid=ZbWKwL" id="facebook-link">Facebook</a>        </div>
+            </div>
+        </div>
+        </footer>
+
+        <!-- Script for the dropdown menu -->
+
+<script>
+    function toggleMobileMenu() {
+    const navButtons = document.querySelector('.nav-buttons');
+    navButtons.classList.toggle('active');
+}
+
+function toggleSubmenu(event, submenuId) {
+    event.preventDefault();
+    const submenu = document.getElementById(submenuId);
+
+    // Close all other submenus
+    const allSubmenus = document.querySelectorAll('.sub-dropdown-content');
+    allSubmenus.forEach(sub => {
+        if (sub !== submenu) {
+            sub.style.display = 'none';
+        }
+    });
+
+    // Toggle the clicked submenu
+    submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+}
+
+// Add event listener to close all submenus when the mouse leaves the category
+const dropdown = document.querySelector('.dropdown');
+dropdown.addEventListener('mouseleave', () => {
+    const allSubmenus = document.querySelectorAll('.sub-dropdown-content');
+    allSubmenus.forEach(sub => {
+        sub.style.display = 'none';
+    });
+});
+
+// Function to scroll to the bottom of the page
+function scrollToBottom() {
+    window.scrollTo({
+        top: document.body.scrollHeight, // Scroll to the bottom of the page
+        behavior: 'smooth' // Smooth scrolling
+    });
+}
+
+// Attach event listener to the About button in the toolbar
+document.querySelector('.nav-buttons a[href="#about-section"]').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent default link behavior
+    scrollToBottom(); // Call the scroll to bottom function
+    toggleMobileMenu(); // Close the mobile menu after clicking the "About" button
+});
+
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+document.querySelector('.footer-section ul li a[href="#Page-Top"]').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent default link behavior
+    scrollToTop(); // Call the scroll to top function
+});
+
+document.getElementById('facebook-link').addEventListener('click', function (e) {
+    e.preventDefault(); // Prevent the default link action
+
+    // Open the link in a new tab
+    const newTab = window.open('', '_blank');
+
+    // Apply a black background and white text to the new tab
+    newTab.document.body.style.backgroundColor = 'black';
+    newTab.document.body.style.color = 'white';
+
+    // Now set the location of the new tab to the actual URL
+    newTab.location.href = this.href;
+});
+
+function updatePreviewImage(skinType) {
+    const previewImage = document.getElementById('preview-image');
+    
+    let newImageSrc = '';
+
+    // Determine the new image source based on the skin type
+    switch(skinType) {
+        case 'dry-skin':
+            newImageSrc = 'https://i.ibb.co/VHPtBGf/Avene-sunscreen-removebg-preview.png'; // Dry skin image
+            break;
+        case 'normall-skin':
+            newImageSrc = 'https://i.ibb.co/KjhxyF0/Avene-moistrizer-removebg-preview.png'; // Normal skin image
+            break;
+        case 'oily-skin':
+            newImageSrc = 'https://i.ibb.co/hVW3y09/Avene-high-protection-prodacts-removebg-preview.png'; // Oily skin image
+            break;
+        case 'sensitive-skin':
+            newImageSrc = 'https://i.ibb.co/pnrh2Sh/Avene-high-protection-removebg-preview.png'; // Sensitive skin image
+            break;
+        default:
+            newImageSrc = 'https://i.ibb.co/R6wnSJg/Avene-miceller-water-removebg-preview.png'; // Default image
+    }
+
+    // Update the preview image's source and its style properties
+    previewImage.src = newImageSrc;
+    previewImage.style.position = 'absolute';
+    previewImage.style.left = '15%';
+    previewImage.style.top = '50%';
+    previewImage.style.transform = 'translateY(-50%)';
+    previewImage.style.width = "350px";  // Adjust the width
+    previewImage.style.height = "350px"; // Adjust the height
+    previewImage.style.objectFit = "contain";  // Maintain aspect ratio
+
+    // Mobile specific adjustments (for screens smaller than 1024px)
+    if (window.innerWidth <= 1024) {
+        previewImage.style.left = '60%';  // Center image horizontally on mobile
+        previewImage.style.top = '10%';  // Adjust the top position
+        previewImage.style.transform = 'translateX(-50%)';  // Center horizontally using translateX
+        previewImage.style.width = "350px";  // Adjust width for mobile
+        previewImage.style.height = "350px"; // Adjust height for mobile
+    }
+}
+
+// Function to set the default radio button and image
+function setDefaultRadioButton() {
+    const skinType = localStorage.getItem('selectedSkinType') || 'dry-skin'; // Default to 'dry-skin' if nothing is saved
+
+    // Set the radio button to the saved or default skin type
+    const radioButton = document.getElementById(skinType);
+    if (radioButton) {
+        radioButton.checked = true; // Mark the radio button as selected
+        updatePreviewImage(skinType); // Update the image according to the selected skin type
+    }
+}
+
+// Function to save the selected skin type to localStorage
+function onSkinTypeChange(skinType) {
+    localStorage.setItem('selectedSkinType', skinType); // Store the selected skin type
+    updatePreviewImage(skinType); // Update the image immediately after selection
+}
+
+// Call setDefaultRadioButton on page load
+window.addEventListener('load', function() {
+    setDefaultRadioButton(); // Restore the last selected option or the default one
+});
+
+// Add event listeners to the skin type radio buttons
+document.getElementById('dry-skin').addEventListener('change', function() {
+    onSkinTypeChange('dry-skin');
+});
+
+document.getElementById('normall-skin').addEventListener('change', function() {
+    onSkinTypeChange('normall-skin');
+});
+
+document.getElementById('oily-skin').addEventListener('change', function() {
+    onSkinTypeChange('oily-skin');
+});
+
+document.getElementById('sensitive-skin').addEventListener('change', function() {
+    onSkinTypeChange('sensitive-skin');
+});
+
+// Recheck the selection on window resize to handle dynamic changes
+window.addEventListener('resize', function() {
+    setDefaultRadioButton(); // This will ensure the correct radio button is selected based on screen size
+});
+
+
+
+
+function openWhatsAppChat() {
+    const phoneNumber = '+90 545 198 15 22'; // WhatsApp phone number
+    const currentURL = window.location.href; // Get the current page URL
+    let selectedSkinType = ''; // Initialize variable for selected radio button
+
+    // Get the selected radio button ID
+    const radios = document.querySelectorAll('input[name="skin-type"]');
+    radios.forEach(radio => {
+        if (radio.checked) {
+            selectedSkinType = radio.id; // Store the ID of the selected radio button
+        }
+    });
+
+    // Fallback for no selection
+    if (!selectedSkinType) {
+        selectedSkinType = "Not selected";
+    }
+
+    // Compose the WhatsApp message
+    const message = `Hello! I have a query regarding the product on this page:\n*${currentURL}*\n\nSelected Option:\n*${selectedSkinType}*`;
+
+    // Encode the full message
+    const encodedMessage = encodeURIComponent(message);
+
+    // Generate the WhatsApp API URL
+    const whatsappURL = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
+
+    // Ensure the link is created dynamically
+    let hiddenLink = document.createElement('a');
+    hiddenLink.href = whatsappURL;
+    hiddenLink.target = '_blank'; // Open in a new tab
+    hiddenLink.rel = 'noopener noreferrer'; // Security best practice
+    document.body.appendChild(hiddenLink);
+
+    // Programmatically click the link
+    hiddenLink.click();
+
+    // Clean up the hidden link
+    setTimeout(() => {
+        hiddenLink.remove();
+    }, 500);
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+    <defs>
+        <style>
+            .cls-1,
+            .cls-2 {
+                fill: none;
+                stroke: #000;
+            }
+            .cls-1 {
+                stroke-miterlimit: 10;
+                stroke-width: 1.5; /* Slightly thicker stroke for the circle */
+            }
+            .cls-2 {
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                stroke-width: 1.2; /* Slightly thicker stroke for the line */
+            }
+            .cls-3 {
+                font-size: 6px;
+                font-family: ArialMT, Arial;
+                font-weight: 400; /* Regular weight for text (no bold) */
+            }
+        </style>
+    </defs>
+    <circle class="cls-1" cx="25" cy="20.02" r="12.5"/>
+    <line class="cls-2" x1="14.58" y1="20.02" x2="35.42" y2="20.02"/>
+    <text class="cls-3" transform="translate(12.27 38.99)">NORMAL<tspan x="5.83" y="6">SKIN</tspan></text>
+</svg>
