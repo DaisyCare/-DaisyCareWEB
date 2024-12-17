@@ -16,7 +16,7 @@
     <div class="nav-buttons">
         <i class="fas fa-times mobile-close-icon" onclick="toggleMobileMenu()"></i>
         
-        <a href="index">Home</a>
+        <a href="main.html">Home</a>
 
         <div class="dropdown">
             <a href="#">Category ▼</a>
@@ -43,7 +43,9 @@
         <a href="#about-section">About</a>
     </div>
 
-    <div class="logo">Daisy Care</div>
+    <div class="logo">
+        <a href="main.html" style="text-decoration: none; color: inherit;">Daisy Care</a>
+    </div>
 </div>
 
 <!-- Logo Image that links to the relative path of Avene.html -->
@@ -141,7 +143,7 @@
     <div class="footer-section">
         <h3>Quick Links</h3>
         <ul>
-            <li><a href="index">Home</a></li>
+            <li><a href="main.html">Home</a></li>
             <li><a href="#">Category</a></li>
             <li><a href="#Page-Top">Page Top</a></li>
         </ul>
@@ -163,49 +165,49 @@
 
 <script>
     function toggleMobileMenu() {
-const navButtons = document.querySelector('.nav-buttons');
-navButtons.classList.toggle('active');
+    const navButtons = document.querySelector('.nav-buttons');
+    navButtons.classList.toggle('active');
 }
 
 function toggleSubmenu(event, submenuId) {
-event.preventDefault();
-const submenu = document.getElementById(submenuId);
+    event.preventDefault();
+    const submenu = document.getElementById(submenuId);
 
-// Close all other submenus
-const allSubmenus = document.querySelectorAll('.sub-dropdown-content');
-allSubmenus.forEach(sub => {
-    if (sub !== submenu) {
-        sub.style.display = 'none';
-    }
-});
+    // Close all other submenus
+    const allSubmenus = document.querySelectorAll('.sub-dropdown-content');
+    allSubmenus.forEach(sub => {
+        if (sub !== submenu) {
+            sub.style.display = 'none';
+        }
+    });
 
-// Toggle the clicked submenu
-submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+    // Toggle the clicked submenu
+    submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
 }
 
 // Add event listener to close all submenus when the mouse leaves the category
 const dropdown = document.querySelector('.dropdown');
 dropdown.addEventListener('mouseleave', () => {
-const allSubmenus = document.querySelectorAll('.sub-dropdown-content');
-allSubmenus.forEach(sub => {
-    sub.style.display = 'none';
-});
+    const allSubmenus = document.querySelectorAll('.sub-dropdown-content');
+    allSubmenus.forEach(sub => {
+        sub.style.display = 'none';
+    });
 });
 
 // Function to scroll to the bottom of the page
 function scrollToBottom() {
-        window.scrollTo({
-            top: document.body.scrollHeight, // Scroll to the bottom of the page
-            behavior: 'smooth' // Smooth scrolling
-        });
-    }
-
-    // Attach event listener to the About button in the toolbar
-    document.querySelector('.nav-buttons a[href="#about-section"]').addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent default link behavior
-        scrollToBottom(); // Call the scroll to bottom function
+    window.scrollTo({
+        top: document.body.scrollHeight, // Scroll to the bottom of the page
+        behavior: 'smooth' // Smooth scrolling
     });
+}
 
+// Attach event listener to the About button in the toolbar
+document.querySelector('.nav-buttons a[href="#about-section"]').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent default link behavior
+    scrollToBottom(); // Call the scroll to bottom function
+    toggleMobileMenu(); // Close the mobile menu after clicking the "About" button
+});
 
 function scrollToTop() {
     window.scrollTo({
@@ -220,20 +222,19 @@ document.querySelector('.footer-section ul li a[href="#Page-Top"]').addEventList
     scrollToTop(); // Call the scroll to top function
 });
 
-
 document.getElementById('facebook-link').addEventListener('click', function (e) {
-        e.preventDefault(); // Prevent the default link action
-        
-        // Open the link in a new tab
-        const newTab = window.open('', '_blank');
-        
-        // Apply a black background and white text to the new tab
-        newTab.document.body.style.backgroundColor = 'black';
-        newTab.document.body.style.color = 'white';
-        
-        // Now set the location of the new tab to the actual URL
-        newTab.location.href = this.href;
-    });
+    e.preventDefault(); // Prevent the default link action
+
+    // Open the link in a new tab
+    const newTab = window.open('', '_blank');
+
+    // Apply a black background and white text to the new tab
+    newTab.document.body.style.backgroundColor = 'black';
+    newTab.document.body.style.color = 'white';
+
+    // Now set the location of the new tab to the actual URL
+    newTab.location.href = this.href;
+});
 </script>
 
 </body>
