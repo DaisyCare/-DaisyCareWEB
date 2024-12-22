@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Daisy Care - Avene (miceller water)</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="Productstyle.css">
+    <link rel="stylesheet" href="Productstyle - Copy.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
@@ -118,12 +118,10 @@
 
 
     <div class="product-dis-head">Description</div>
-    <div class="product-dis"><p>hey everyone!
-        This page is dedicated to skin care products.
-        All products are from Turkey and France as well.
-        Delivery is available to all governorates of Egypt. 
-        Delivery within 5-10 days from the date of order request 🌷.
-        </p></div>
+    <div class="product-dis-head">Description</div>
+<div class="product-dis">
+    <p id="product-description"></p>
+</div>
     <div class="price"></div>
     <div class="orderNow"></div>
 </div>
@@ -233,46 +231,54 @@ document.getElementById('facebook-link').addEventListener('click', function (e) 
 
 function updatePreviewImage(skinType) {
     const previewImage = document.getElementById('preview-image');
+    const descriptionElement = document.getElementById('product-description');
     
     let newImageSrc = '';
+    let newDescription = '';
 
-    // Determine the new image source based on the skin type
+    // Determine the new image source and description based on the skin type
     switch(skinType) {
         case 'dry-skin':
-            newImageSrc = 'https://i.ibb.co/JtgB12f/dry-to-combination-skin-removebg-preview.png'; // Dry skin image
+            newImageSrc = 'https://i.ibb.co/JtgB12f/dry-to-combination-skin-removebg-preview.png';
+            newDescription = 'Perfect for dry to combination skin. This micellar water gently removes makeup and impurities while hydrating your skin.';
             break;
         case 'normall-skin':
-            newImageSrc = 'https://i.ibb.co/jySMV6c/normal-to-combination-skin-sunscreen-removebg-preview.png'; // Normal skin image
+            newImageSrc = 'https://i.ibb.co/jySMV6c/normal-to-combination-skin-sunscreen-removebg-preview.png';
+            newDescription = 'Formulated for normal to combination skin. Provides SPF protection while nourishing your skin.';
             break;
         case 'prone-skin':
-            newImageSrc = 'https://i.ibb.co/R654HJ2/prone-skin-removebg-preview.png'; // Oily skin image
+            newImageSrc = 'https://i.ibb.co/R654HJ2/prone-skin-removebg-preview.png';
+            newDescription = 'Specially made for oily or acne-prone skin. Helps control excess oil and clears out pores for a refreshed feel.';
             break;
         case 'restorative-protective-skin':
-            newImageSrc = 'https://i.ibb.co/zFmFn2N/restorative-protective-skin-removebg-preview.png'; // Sensitive skin image
+            newImageSrc = 'https://i.ibb.co/zFmFn2N/restorative-protective-skin-removebg-preview.png';
+            newDescription = 'Ideal for sensitive and irritated skin. Restores and protects the skin barrier, providing deep moisture.';
             break;
         default:
-            newImageSrc = 'https://i.ibb.co/JtgB12f/dry-to-combination-skin-removebg-preview.png'; // Default image
+            newImageSrc = 'https://i.ibb.co/JtgB12f/dry-to-combination-skin-removebg-preview.png';
+            newDescription = 'Select an option to see the description.';
     }
 
-    // Update the preview image's source and its style properties
+    // Update the preview image's source and description
     previewImage.src = newImageSrc;
+    descriptionElement.innerText = newDescription;
+
+    // Adjust image styling
     previewImage.style.position = 'absolute';
     previewImage.style.left = '15%';
     previewImage.style.top = '50%';
     previewImage.style.transform = 'translateY(-50%)';
-    previewImage.style.width = "350px";  // Adjust the width
-    previewImage.style.height = "350px"; // Adjust the height
-    previewImage.style.objectFit = "contain";  // Maintain aspect ratio
+    previewImage.style.width = "350px"; 
+    previewImage.style.height = "350px"; 
+    previewImage.style.objectFit = "contain";  
 
-    // Mobile specific adjustments (for screens smaller than 1024px)
     if (window.innerWidth <= 1024) {
-        previewImage.style.left = '60%';  // Center image horizontally on mobile
-        previewImage.style.top = '10%';  // Adjust the top position
-        previewImage.style.transform = 'translateX(-50%)';  // Center horizontally using translateX
-        previewImage.style.width = "350px";  // Adjust width for mobile
-        previewImage.style.height = "350px"; // Adjust height for mobile
+        previewImage.style.left = '60%';
+        previewImage.style.top = '10%';
+        previewImage.style.transform = 'translateX(-50%)';
     }
 }
+
 
 // Function to set the default radio button and image
 function setDefaultRadioButton() {
@@ -363,6 +369,12 @@ function openWhatsAppChat() {
     setTimeout(() => {
         hiddenLink.remove();
     }, 500);
+
+    descriptionElement.style.opacity = '0';
+setTimeout(() => {
+    descriptionElement.innerText = newDescription;
+    descriptionElement.style.opacity = '1';
+}, 200);
 }
 
 </script>
