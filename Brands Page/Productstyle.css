@@ -257,6 +257,11 @@ margin-left: 20px;
     border-radius: 4px; /* Optional: Rounded corners for the text box */
 }
 
+#product-description {
+    transition: opacity 0.5s ease;
+}
+
+
 .product-dis {
     position: absolute; /* Position relative to the box */
     top: 330px; /* Distance from the bottom of the box */
