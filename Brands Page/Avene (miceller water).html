@@ -84,16 +84,16 @@
                             </label>
                         </div>
     
-                        <div class="oily-skin">
-                            <input type="radio" id="oily-skin" name="skin-type" class="skin-radio" onchange="updatePreviewImage('oily-skin')" style="display: none;">
-                            <label for="oily-skin">
+                        <div class="prone-skin">
+                            <input type="radio" id="prone-skin" name="skin-type" class="skin-radio" onchange="updatePreviewImage('prone-skin')" style="display: none;">
+                            <label for="prone-skin">
                                 <img src="SVG/OILYSKIN.svg" alt="Oily Skin">
                             </label>
                         </div>
     
-                        <div class="sensitive-skin">
-                            <input type="radio" id="sensitive-skin" name="skin-type" class="skin-radio" onchange="updatePreviewImage('sensitive-skin')" style="display: none;">
-                            <label for="sensitive-skin">
+                        <div class="restorative-protective-skin">
+                            <input type="radio" id="restorative-protective-skin" name="skin-type" class="skin-radio" onchange="updatePreviewImage('restorative-protective-skin')" style="display: none;">
+                            <label for="restorative-protective-skin">
                                 <img src="SVG/SENSITIVESKIN.svg" alt="Sensitive Skin">
                             </label>
                         </div>
@@ -239,19 +239,19 @@ function updatePreviewImage(skinType) {
     // Determine the new image source based on the skin type
     switch(skinType) {
         case 'dry-skin':
-            newImageSrc = 'https://i.ibb.co/VHPtBGf/Avene-sunscreen-removebg-preview.png'; // Dry skin image
+            newImageSrc = 'https://github.com/DaisyCare/DaisyPics/blob/main/Avene/moistrizer/dry%20to%20combination%20skin.png?raw=true'; // Dry skin image
             break;
         case 'normall-skin':
-            newImageSrc = 'https://i.ibb.co/KjhxyF0/Avene-moistrizer-removebg-preview.png'; // Normal skin image
+            newImageSrc = 'https://github.com/DaisyCare/DaisyPics/blob/main/Avene/moistrizer/normal%20to%20combination%20skin.png?raw=true'; // Normal skin image
             break;
-        case 'oily-skin':
-            newImageSrc = 'https://i.ibb.co/hVW3y09/Avene-high-protection-prodacts-removebg-preview.png'; // Oily skin image
+        case 'prone-skin':
+            newImageSrc = 'https://github.com/DaisyCare/DaisyPics/blob/main/Avene/moistrizer/prone%20skin.png?raw=true'; // Oily skin image
             break;
-        case 'sensitive-skin':
-            newImageSrc = 'https://i.ibb.co/pnrh2Sh/Avene-high-protection-removebg-preview.png'; // Sensitive skin image
+        case 'restorative-protective-skin':
+            newImageSrc = 'https://github.com/DaisyCare/DaisyPics/blob/main/Avene/moistrizer/restorative%20protective%20skin.png?raw=true'; // Sensitive skin image
             break;
         default:
-            newImageSrc = 'https://i.ibb.co/R6wnSJg/Avene-miceller-water-removebg-preview.png'; // Default image
+            newImageSrc = 'https://github.com/DaisyCare/DaisyPics/blob/main/Avene/moistrizer/dry%20to%20combination%20skin.png?raw=true'; // Default image
     }
 
     // Update the preview image's source and its style properties
@@ -306,12 +306,12 @@ document.getElementById('normall-skin').addEventListener('change', function() {
     onSkinTypeChange('normall-skin');
 });
 
-document.getElementById('oily-skin').addEventListener('change', function() {
-    onSkinTypeChange('oily-skin');
+document.getElementById('prone-skin').addEventListener('change', function() {
+    onSkinTypeChange('prone-skin');
 });
 
-document.getElementById('sensitive-skin').addEventListener('change', function() {
-    onSkinTypeChange('sensitive-skin');
+document.getElementById('restorative-protective-skin').addEventListener('change', function() {
+    onSkinTypeChange('restorative-protective-skin');
 });
 
 // Recheck the selection on window resize to handle dynamic changes
