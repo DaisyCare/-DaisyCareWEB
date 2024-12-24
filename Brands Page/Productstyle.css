@@ -229,13 +229,13 @@ margin-left: 20px;
     left: 5%;
 }
 
-.oily-skin {
+.prone-skin {
     position: absolute;
     top: 60%;
     left: 5%;
 }
 
-.sensitive-skin {
+.restorative-protective-skin {
     position: absolute;
     top: 80%;
     left: 5%;
@@ -256,6 +256,11 @@ margin-left: 20px;
     padding: 2px 5px; /* Add padding inside the text box */
     border-radius: 4px; /* Optional: Rounded corners for the text box */
 }
+
+#product-description {
+    transition: opacity 0.5s ease;
+}
+
 
 .product-dis {
     position: absolute; /* Position relative to the box */
@@ -368,13 +373,13 @@ margin-left: 20px;
         left: 5%;
     }
     
-    .oily-skin {
+    .prone-skin {
         position: absolute;
         top: 30%;
         left: 5%;
     }
     
-    .sensitive-skin {
+    .restorative-protective-skin {
         position: absolute;
         top: 40%;
         left: 5%;
