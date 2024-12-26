@@ -70,10 +70,10 @@
                 <div class="product-skin-type">
                     <div class="skin-type">
                         <!-- Radio buttons for skin types -->
-                        <div class="dry-skin">
-                            <input type="radio" id="dry-skin" name="skin-type" class="skin-radio" onchange="updatePreviewImage('dry-skin')" checked style="display: none;">
-                            <label for="dry-skin">
-                                <img src="SVG/DRYSKIN.svg" alt="Dry Skin">
+                        <div class="acnic-skin">
+                            <input type="radio" id="acnic-skin" name="skin-type" class="skin-radio" onchange="updatePreviewImage('acnic-skin')" checked style="display: none;">
+                            <label for="acnic-skin">
+                                <img src="SVG/ACNICSKIN.svg" alt="Acnic Skin">
                             </label>
                         </div>
     
@@ -238,12 +238,12 @@ function updatePreviewImage(skinType) {
 
     // Determine the new image source and description based on the skin type
     switch(skinType) {
-        case 'dry-skin':
-            newImageSrc = 'https://i.ibb.co/JtgB12f/dry-to-combination-skin-removebg-preview.png';
-            newDescription = 'Perfect for dry to combination skin. This micellar water gently removes makeup and impurities while hydrating your skin.';
+        case 'acnic-skin':
+            newImageSrc = 'https://files.catbox.moe/oohcr6.png';
+            newDescription = 'Perfect for acnic to combination skin. This micellar water gently removes makeup and impurities while hydrating your skin.';
             break;
         case 'normall-skin':
-            newImageSrc = 'https://i.ibb.co/jySMV6c/normal-to-combination-skin-sunscreen-removebg-preview.png';
+            newImageSrc = 'https://files.catbox.moe/g5iilu.png';
             newDescription = 'Formulated for normal to combination skin. Provides SPF protection while nourishing your skin.';
             break;
         case 'prone-skin':
@@ -251,11 +251,11 @@ function updatePreviewImage(skinType) {
             newDescription = 'Specially made for oily or acne-prone skin. Helps control excess oil and clears out pores for a refreshed feel.';
             break;
         case 'restorative-protective-skin':
-            newImageSrc = 'https://i.ibb.co/zFmFn2N/restorative-protective-skin-removebg-preview.png';
+            newImageSrc = 'https://files.catbox.moe/yhgmil.png';
             newDescription = 'Ideal for sensitive and irritated skin. Restores and protects the skin barrier, providing deep moisture.';
             break;
         default:
-            newImageSrc = 'https://i.ibb.co/JtgB12f/dry-to-combination-skin-removebg-preview.png';
+            newImageSrc = 'https://files.catbox.moe/oohcr6.png';
             newDescription = 'Select an option to see the description.';
     }
 
@@ -282,7 +282,7 @@ function updatePreviewImage(skinType) {
 
 // Function to set the default radio button and image
 function setDefaultRadioButton() {
-    const skinType = localStorage.getItem('selectedSkinType') || 'dry-skin'; // Default to 'dry-skin' if nothing is saved
+    const skinType = localStorage.getItem('selectedSkinType') || 'acnic-skin'; // Default to 'acnic-skin' if nothing is saved
 
     // Set the radio button to the saved or default skin type
     const radioButton = document.getElementById(skinType);
@@ -304,8 +304,8 @@ window.addEventListener('load', function() {
 });
 
 // Add event listeners to the skin type radio buttons
-document.getElementById('dry-skin').addEventListener('change', function() {
-    onSkinTypeChange('dry-skin');
+document.getElementById('acnic-skin').addEventListener('change', function() {
+    onSkinTypeChange('acnic-skin');
 });
 
 document.getElementById('normall-skin').addEventListener('change', function() {
